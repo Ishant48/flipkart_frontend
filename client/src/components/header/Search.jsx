@@ -15,11 +15,12 @@ function Search() {
   const InputSearchBase = styled(InputBase)({
     "padding-left": "20px",
     width: "100%",
+    'font-size':"unset"
   });
   return (
     <SearchContainer>
       <InputSearchBase placeholder="Search for products, brand and more"></InputSearchBase>
-      <Box style={{color:'Blue' ,padding:'5px'}}>
+      <Box style={{color:'Blue' ,padding:'5px',display:'flex'}}>
         <SearchIcon></SearchIcon>
       </Box>
     </SearchContainer>
