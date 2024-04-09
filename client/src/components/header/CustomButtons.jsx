@@ -29,18 +29,17 @@ function CustomButtons() {
   });
 
   const [open, setOpen] = useState(false);
-  const { account } = useContext(DataContext);
+  const { account, setAccount } = useContext(DataContext);
 
   const openDialog = async () => {
     setOpen(true);
   };
 
-  console.log("account:", account);
 
   return (
     <Wrapper>
       {account ? (
-        <Profile account={account}></Profile> // Render Typography only when account is not null
+        <Profile account={account} setAccount={setAccount}></Profile> // Render Typography only when account is not null
       ) : (
         <LoginButton variant="contained" onClick={openDialog}>
           Login
