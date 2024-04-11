@@ -5,9 +5,9 @@ import { Box } from '@mui/material'
 import { styled } from "@mui/system";
 import { useDispatch, useSelector } from 'react-redux';
 import { getProducts } from '../../redux/actions/productAction';
-import Slide from '../header/Slide';
-import MidSlide from '../header/MidSlide';
-import MidSection from '../header/MidSection';
+import Slide from './Slide';
+import MidSlide from './MidSlide';
+import MidSection from './MidSection';
 
 function Home() {
     const Component = styled(Box)({

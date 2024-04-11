@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_PRODUCTS_FAILURE, GET_PRODUCTS_SUCCESS } from "../constants/productConstants";
+import { GET_PRODUCTS_FAILURE, GET_PRODUCTS_SUCCESS, GET_PRODUCT_DETAIL_FAILURE, GET_PRODUCT_DETAIL_REQUEST, GET_PRODUCT_DETAIL_SUCCESS } from "../constants/productConstants";
 
 const URL = "http://localhost:8000";
 
@@ -10,5 +10,18 @@ export const getProducts = () => async (dispatch) => {
   } catch (error) {
     console.log("Error while calling getProducts api:::",error);
     dispatch({type:GET_PRODUCTS_FAILURE ,payload:error});
+  }
+};
+
+export const getProductDetails = (id) => async (dispatch) => {
+  try {
+      dispatch({ type: GET_PRODUCT_DETAIL_REQUEST });
+      const { data } = await axios.get(`http://localhost:8000/product/${id}`);
+      
+      dispatch({ type: GET_PRODUCT_DETAIL_SUCCESS, payload: data });
+
+  } catch (error) {
+      dispatch({ type: GET_PRODUCT_DETAIL_FAILURE, payload: error.response});
+
   }
 };

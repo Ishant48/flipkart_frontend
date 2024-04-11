@@ -3,6 +3,7 @@ import { AppBar, Toolbar, Box, Typography } from '@mui/material';
 import { styled } from '@mui/system';
 import Search from './Search';
 import CustomButtons from './CustomButtons';
+import { Link } from 'react-router-dom';
 
 const StyledHeader = styled(AppBar)({
   background: '#2874f0',
@@ -10,8 +11,11 @@ const StyledHeader = styled(AppBar)({
 });
 
 
-const BoxHeader = styled(Box)({
-  'margin-left':'12%'
+const BoxHeader = styled(Link)({
+  'margin-left':'12%',
+  'lineHeight':0,
+  textDecoration:'none',
+  color:'inherit'
 });
 
 const TypeHeader = styled(Typography)({
@@ -38,7 +42,7 @@ function Header() {
   return (
     <StyledHeader>
       <Toolbar>
-        <BoxHeader>
+        <BoxHeader to={'/'}>
           <img src={logoURL} alt= 'logo' style={{width:'75px'}}></img>
           <Box style={{display:'flex'}}>
             <TypeHeader>
