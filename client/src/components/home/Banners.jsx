@@ -20,10 +20,14 @@ function Banners() {
     }
   };
 
-  const Image = styled('img')({
+  const Image = styled('img')(({theme})=>({
     width: '100%',
-    height: '280px'
-  });
+    height: '280px',
+    [theme.breakpoints.down('md')]: {
+      objectFit:'cover',
+      height:'100px'
+  }
+}));
   return (
     <Carousel responsive={responsive} dotListClass="custom-dot-list-style"
       itemClass="carousel-item-padding-40-px" containerClass="carousel-container" swipeable={false}
