@@ -8,10 +8,10 @@ const LeftContainer = styled(Box)(({ theme }) => ({
     [theme.breakpoints.down('md')]: {
         padding: '20px 40px'
     }
-}))
+}));
 
 const Image = styled('img')({
-    padding: '15px 20px',
+    // padding: '15px 20px',
     border: '1px solid #f0f0f0',
     width: '95%'
 });
