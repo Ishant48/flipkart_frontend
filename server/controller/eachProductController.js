@@ -3,7 +3,6 @@ const productModel = require('../models/products');
 const eachProductController = async (req, res, next) => {
   try {
     const id = req.params.id;
-    console.log(id)
     const productsData = await productModel.findOne({id:id});
     if (productsData) {
       return res.status(200).json(productsData);

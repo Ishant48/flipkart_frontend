@@ -7,10 +7,13 @@ import ActionItems from "./ActionItems";
 import ProductDetail from "./ProductDetail";
 
 
-const Component = styled(Box)({
+const Component = styled(Box)(({theme})=>({
 	background: '#F2F2F2',
-	marginTop: '55px'
-});
+	marginTop: '55px',
+	[theme.breakpoints.down('lg')]: {
+        margin:'0px'
+    }
+}));
 
 const Container = styled(Grid)({
 	background: '#FFFFFF',

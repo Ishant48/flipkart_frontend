@@ -24,6 +24,7 @@ function Navbar() {
         fontFamily:'inherit'
     });
     return (
+        <Box style={{backgroundColor:'#fff'}}>
         <Component>
             {
                 navData.map((data) => {
@@ -36,6 +37,7 @@ function Navbar() {
                 })
             }
         </Component>
+        </Box>
     )
 }
 
