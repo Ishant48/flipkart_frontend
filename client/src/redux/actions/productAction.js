@@ -1,7 +1,7 @@
 import axios from "axios";
 import { GET_PRODUCTS_FAILURE, GET_PRODUCTS_SUCCESS, GET_PRODUCT_DETAIL_FAILURE, GET_PRODUCT_DETAIL_REQUEST, GET_PRODUCT_DETAIL_SUCCESS } from "../constants/productConstants";
 
-const URL = "http://localhost:8000";
+const URL = "https://flipkart-backend-y0q0.onrender.com";
 
 export const getProducts = () => async (dispatch) => {
   try {
@@ -16,7 +16,7 @@ export const getProducts = () => async (dispatch) => {
 export const getProductDetails = (id) => async (dispatch) => {
   try {
       dispatch({ type: GET_PRODUCT_DETAIL_REQUEST });
-      const { data } = await axios.get(`http://localhost:8000/product/${id}`);
+      const { data } = await axios.get(`https://flipkart-backend-y0q0.onrender.com/product/${id}`);
       
       dispatch({ type: GET_PRODUCT_DETAIL_SUCCESS, payload: data });
 
